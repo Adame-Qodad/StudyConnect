@@ -65,17 +65,29 @@
   </div>
 {% endif %}
 
-<footer class="bg-dark text-light py-4 mt-5 ">
-    <div class="container text-center">
-        <p class="mb-1">&copy; {{ "now"|date("Y") }} StudyConnect - Tous droits réservés.</p>
-        <div>
-            <a href="/cgu" class="text-decoration-none text-light me-3">Conditions Générales d'Utilisation</a>
-            <a href="/mentions-legales" class="text-decoration-none text-light me-3">Mentions légales</a>
-            <a href="/politique-confidentialite" class="text-decoration-none text-light me-3">Politique de confidentialité</a>
-            <a href="/accessibilite" class="text-decoration-none text-light">Accessibilité</a>
+<<footer class="bg-dark text-light mt-5 pt-4 pb-3">
+        <div class="container text-center">
+            <p class="mb-1">&copy; {{ "now"|date("Y") }} - Blog MMA & UFC. Tous droits réservés.</p>
+
+            <ul class="list-inline small mb-2">
+                <li class="list-inline-item">
+                    <a href="{{ path('app_mentions_legales') }}" class="text-light text-decoration-underline">Mentions légales</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="{{ path('app_conditions_utilisation') }}" class="text-light text-decoration-underline">Conditions d'utilisation</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="{{ path('app_confidentialite') }}" class="text-light text-decoration-underline">Politique de confidentialité</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="{{ path('app_contact') }}" class="text-light text-decoration-underline">Contact</a>
+                </li>
+            </ul>
+
+            <p class="small text-muted mb-0">Ce site est un projet fictif dans le cadre d’un exercice de développement web. Aucun contenu n’est à caractère commercial.</p>
         </div>
-    </div>
-</footer>
+    </footer>
+
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
