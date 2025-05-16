@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Politique de Cookies{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+  <h1 class="mb-4">Politique de Cookies</h1>
+
+  <p>Chez <strong>StudyConnect</strong>, nous utilisons des cookies pour améliorer votre expérience, faciliter la navigation, et vous proposer des fonctionnalités personnalisées.</p>
+
+  <h3>1. Qu’est-ce qu’un cookie ?</h3>
+  <p>Un cookie est un petit fichier texte enregistré sur votre appareil lors de la visite d’un site web. Il permet de stocker temporairement des informations vous concernant, comme votre langue ou vos préférences de session.</p>
+
+  <h3>2. Pourquoi utilisons-nous des cookies ?</h3>
+  <ul>
+    <li><strong>Cookies essentiels</strong> : nécessaires au bon fonctionnement du site (connexion, sécurité, navigation).</li>
+    <li><strong>Cookies analytiques</strong> : pour mesurer la fréquentation du site et améliorer les performances.</li>
+    <li><strong>Cookies fonctionnels</strong> : pour enregistrer vos préférences (thème, langue, etc.).</li>
+  </ul>
+
+  <h3>3. Gestion des cookies</h3>
+  <p>Vous pouvez à tout moment choisir d’activer ou désactiver les cookies non essentiels.</p>
+
+  <h3>4. Vos droits</h3>
+  <p>Conformément au RGPD, vous pouvez demander l’accès, la modification ou la suppression des données collectées via les cookies.</p>
+
+  <p>Pour toute question, contactez-nous à : <a href="mailto:Study.Connect00@gmail.com">contact@studyconnect.com</a></p>
+
+  <a href="{{ path('app_home') }}" class="btn btn-primary mt-4">Retour à l’accueil</a>
+</div>
+{% endblock %}

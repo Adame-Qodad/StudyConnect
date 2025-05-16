@@ -50,6 +50,50 @@
     {% block body %}{% endblock %}
 </div>
 
+{% if not app.request.cookies.get('cookie_consent') %}
+  <div id="cookie-consent-banner" class="position-fixed bottom-0 w-100 bg-light border-top p-3 shadow-sm" style="z-index:9999;">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span>
+        Ce site utilise des cookies pour améliorer votre expérience. 
+        <a href="/politique-cookies">En savoir plus</a>.
+      </span>
+      <div>
+        <button id="accept-cookies" class="btn btn-success btn-sm me-2">Accepter</button>
+        <button id="refuse-cookies" class="btn btn-danger btn-sm">Refuser</button>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<footer class="bg-dark text-light py-4 mt-5 ">
+    <div class="container text-center">
+        <p class="mb-1">&copy; {{ "now"|date("Y") }} StudyConnect - Tous droits réservés.</p>
+        <div>
+            <a href="/cgu" class="text-decoration-none text-light me-3">Conditions Générales d'Utilisation</a>
+            <a href="/mentions-legales" class="text-decoration-none text-light me-3">Mentions légales</a>
+            <a href="/politique-confidentialite" class="text-decoration-none text-light me-3">Politique de confidentialité</a>
+            <a href="/accessibilite" class="text-decoration-none text-light">Accessibilité</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const banner = document.getElementById('cookie-consent-banner');
+    if (banner) {
+      document.getElementById('accept-cookies').addEventListener('click', function () {
+        document.cookie = "cookie_consent=accepted; path=/; max-age=" + (60 * 60 * 24 * 365);
+        banner.style.display = 'none';
+      });
+
+      document.getElementById('refuse-cookies').addEventListener('click', function () {
+        document.cookie = "cookie_consent=refused; path=/; max-age=" + (60 * 60 * 24 * 365);
+        banner.style.display = 'none';
+      });
+    }
+  });
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 {% block javascripts %}{% endblock %}
 </body>
